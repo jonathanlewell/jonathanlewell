@@ -1,0 +1,36 @@
+baseurl = "/"
+languageCode = "en-us"
+languageLang = "en"
+title = "Jonathan Lewell"
+googleAnalytics = "UA-1234567-12"
+
+[taxanomies]
+    category = "categories"
+    tag = "tags"
+
+[params]
+    author = "Jonathan Lewell"
+    description = "Read marketing and website development guides."
+    subtitle = "Read marketing and website development guides."
+    themecolour = "#ffffff"
+    twitter = "@jonathanlewell1"
+
+[author]    
+name = "Jonathan Lewell"
+
+# The top navigation menu links. Home included first by default:
+[[menu.main]]
+    name = "Home"
+    identifier = "home"
+    url = "/"
+    weight = 1
+[[menu.main]]
+    name = "Articles"
+    identifier = "articles"
+    url = "/articles/"
+    weight = 2
+[[menu.main]]
+    name = "Contact"
+    identifier = "contact"
+    url = "/contact/"
+    weight = 3

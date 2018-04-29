@@ -1,0 +1,66 @@
+html { 
+    font-size: 100%;
+        @media (min-width: 64em) {
+            font-size: 125%;
+        }
+}
+
+// Body (normal type) styles
+body {
+    font-size: $body-copy-size;
+    line-height: $base-line-height;
+    font-family: $body-copy-font;
+    font-weight: $body-copy-weight;
+    color: $brand-dark-color;
+}
+
+// Heading styles 
+h1, h2, h3, h4, h5 {
+    font-family: $heading-copy-font; 
+    font-weight: $heading-font-weight;
+    color: $brand-dark-color;
+    margin-bottom: $spacing-half;
+}
+h1 {
+    font-size: 1.5em; /* 24px --> 24 ÷ 16 = 1.5 */
+  line-height: 1em; /* 24px --> 24 ÷ 24 = 1 */
+}
+h2 {
+    font-size: 1.375em; /* 22px --> 22 ÷ 16 = 1.375 */
+  line-height: 1.0909em; /* 24px --> 24 ÷ 22 = 1.090909(09) */
+}
+h3 {
+    font-size: 1.25em; /* 20px --> 20 ÷ 16 = 1.25 */
+  line-height: 1.2em; /* 24px --> 24 ÷ 20 = 1.2 */
+}
+h4 {
+    font-size: 1.125em; /* 18px --> 18 ÷ 16 = 1.125 */
+  line-height: 1.333em; /* 24px --> 24 ÷ 18 = 1.3333333(3) */
+}
+h5, h6 {
+    font-size: 1em; /* 16px --> 16 ÷ 16 = 1 */
+    line-height: 1.5em; /* 24px --> 24 ÷ 16 = 1.5 */
+  }
+
+// Add bottom margins for consistent vertical rythm (csswizardry)
+hgroup,
+ul,ol,dd,
+p,figure,
+pre,table,fieldset,hr{
+    margin-top: 0;
+    margin-bottom: $spacing;
+}
+
+small {
+    font-style: italic;
+}
+
+// Link text styles
+main a {
+ color: $secondary-color-dark;
+ background-color: #f0f8f9;
+ text-decoration: underline;   
+    &:hover, &:focus {
+        color: $secondary-color-darkest;
+    }
+}

@@ -1,0 +1,112 @@
+/*---------- CARDS LAYOUT ----------*/
+
+/* Flexbox layout */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: $spacing-half;
+ }
+
+.card {
+    background: $brand-plain-white;
+    border: 1px solid #eee;
+    box-shadow: 0 9px 65px rgba(0,0,0,.03);
+    width: 100%;
+    margin-bottom: $spacing;
+    @include tablet {
+	    width:  calc(1/3*100% - (1 - 1/3)*1em);
+    }
+    &__image {
+        @include tablet {
+            &--feature {
+                max-width: 50%;
+            }
+        }
+    }
+    &__content {
+    padding: 0 $spacing-half $spacing-half $spacing-half;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+    &__header {
+        margin-bottom: $spacing;
+        font-style: normal;
+        font-family: $heading-copy-font;
+        font-weight: $heading-font-weight;
+        color: $brand-dark-color;
+    }
+    &__subheader {
+        //margin-bottom: $spacing-half;
+        font-family: $heading-copy-font;
+        font-size: 1em;
+        font-style: italic;
+        color: $brand-subtitle-grey;
+    }
+    &__time {
+        display: block;
+        //margin-bottom: $spacing-half;
+        color: $secondary-color-dark;
+    }
+    &__description {
+        color: $brand-dark-color;
+    }
+    &__link {
+        background: $brand-plain-white;
+        text-decoration: none;
+        font-style: italic;
+    }
+    &__menu {
+        list-style: none;
+        padding-left: 0;
+    }
+    &__bullet {
+        //margin-bottom: $spacing-third;    
+        &:before {
+            content: '✓';
+            margin-right: $spacing-half;
+        }
+    }
+    &__cta {
+        text-decoration: none;
+        background: none;
+        font-family: $heading-copy-font;
+        font-weight: 500;
+        color: $secondary-color;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &__button {
+        text-decoration: none;
+        background-color: $secondary-color;
+        font-family: $heading-copy-font;
+        font-weight: 500;
+        color: $brand-plain-white;
+        padding: 0.5rem 1rem;
+        &:hover {
+            cursor: pointer;
+            background-color: $secondary-color-dark;
+            color: $brand-plain-white;
+        }
+    }
+}
+
+// 2 cards in a row variation
+
+.card--half-width {
+    flex-shrink: 1;
+    @media only screen and (min-width: 600px) {
+        width: calc(50% - 0.75em);
+	}
+}
+
+.card--feature {
+    @include tablet {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        flex: 1;
+    }
+}

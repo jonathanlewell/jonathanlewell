@@ -1,0 +1,24 @@
+.site-breadcrumbs {
+    max-width: $content-area-max-width;
+    margin: $spacing auto $spacing auto;
+    width: 90%;
+    font-family: $heading-copy-font; 
+    font-weight: $heading-font-weight;
+    color: $brand-subtitle-grey;
+}
+
+.breadcrumbs__menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.breadcrumbs__link {
+    font-family: $heading-copy-font; 
+    font-weight: $heading-font-weight;
+    color: $secondary-color-dark;
+}
+
+.breadcrumbs__item {
+    display: inline-block;
+}

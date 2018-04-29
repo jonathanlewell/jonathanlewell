@@ -1,0 +1,30 @@
+{{ define "main" }}
+    <main class="page-layout page-layout--home" role="main" id="main">
+
+            <section class="cards">
+
+                <header class="introduction">
+                <h1 class="introduction__title">Latest articles you may find interesting:</h1>
+                <a class="introduction__link" href="/articles/">See all my articles →</a>
+                </header>
+
+                <!-- <aside class="author">
+                    <h2 class="author__title">Recipes by Oi Cheepchaiissara</h2>
+                    <img class="author__image lazyload" data-src="/img/oi/oi-tastes-good.jpg">
+                </aside> -->
+
+                {{ range first 6 (where .Data.Pages "Type" "articles") }}
+                <article class="card">
+                    <img class="card__image lazyload" data-src="{{ .Params.featured_image }}">
+                    <div class="card__content">
+                        <h3 class="card__header">{{ .Title }}</h3>
+                        <time class="card__time" datetime="{{.Date.Format " 2006-01-02 "}}">{{.Date.Format "Jan 2, 2006"}}</time>
+                        <p class="card__description">{{ .Params.description }}</p>
+                        <a class="card__link button" href="{{.Permalink}}">Read more →</a>
+                    </div>
+                </article>
+            {{ end }}
+            </section>
+
+    </main>
+{{ end }}

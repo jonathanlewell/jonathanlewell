@@ -1,0 +1,33 @@
+{{ define "main" }}
+    {{ partial "breadcrumbs/breadcrumbs.html" . }} 
+    <main class="page-layout page-layout--list" role="main" id="main">
+        
+            <header class="introduction">
+                <h1 class="introduction__title">{{ .Title }}</h1> 
+                <p class="introduction__subtitle">{{ .Params.description }}</p>
+            </header> 
+            
+            {{ if .Params.featured_image }}
+                <img class="image image--feature lazyload" src="{{ .Params.featured_image }}" alt="{{ .Title }}" />
+            {{ end }}
+
+            <section class="content">
+                {{ .Content }}
+            </section> 
+
+            <section class="cards">
+                {{ range .Data.Pages }}
+                    <article class="card">
+                        <img class="card__image lazyload" data-src="{{ .Params.featured_image }}">
+                        <div class="card__content">
+                            <h3 class="card__header">{{ .Title }}</h3>
+                            <time class="card__time" datetime="{{.Date.Format " 2006-01-02 "}}">{{.Date.Format "Jan 2, 2006"}}</time>
+                            <p class="card__description">{{ .Params.description }}</p>
+                            <a class="card__link button" href="{{.Permalink}}">Read more →</a>
+                        </div>
+                    </article>
+                {{ end }}
+            </section>
+
+    </main>
+{{ end }}
